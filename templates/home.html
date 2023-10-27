@@ -2,516 +2,633 @@
 
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>GoHopper</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
-      <!-- style css -->
-      <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-      <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <!-- fonts -->
-      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
-      <!-- owl stylesheets --> 
-      <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-      <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-   </head>
-   <body>
-      <!-- header section start -->
-      <div class="container-fluid">
-         <div class="header_section">
-            <div class="container">
-               <nav class="navbar navbar-light bg-light justify-content-between">
-                  <div id="mySidenav" class="sidenav">
-                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                     <a href="home.html">Home</a>
-                     <a href="service.html">Services</a>
-                     <a href="about.html">About</a>
-                     <a href="blog.html">Blog</a>
-                     <a href="shop.html">Shop</a>
-                     <a href="contacts.html">Contacts</a>
-                  </div>
-                  <form class="form-inline ">
-                     <div class="login_text"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left10">Call : +01 1234567890</span></a></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FoodOnline</title>
+    <!-- Google Font Family Link Start -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800"
+    />
+    <!-- Google Font Family Link End -->
+
+    <!-- CSS -->
+    <link href="{% static 'assets/css/iconmoon.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'assets/css/cs-foodbakery-plugin.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      href="{% static 'assets/css/bootstrap-slider.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- JAVASCRIPT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{% static 'assets/js/modernizr.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.js' %}"></script>
+
+    <style>
+      body,
+      .main-section p,
+      .mce-content-body p {
+        font: Normal 14px/24px "Open Sans", sans-serif;
+        letter-spacing: 0px;
+        text-transform: none;
+        color: #515151 !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--Main Wrapper-->
+    <div class="wrapper">
+      <!-- Header Start -->
+      <header id="header">
+        <div class="main-header">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div class="logo">
+                  <figure>
+                    <a href="index.html" class="light-logo">
+                      <img
+                        src="{% static 'assets/logo/GoHopperLogo.png' %}"
+                        alt="GoHopper"
+                        width="250"
+                      />
+                    </a>
+                  </figure>
+                </div>
+                <div class="main-nav">
+                  <nav id="site-navigation" class="main-navigation">
+                    <ul>
+                      <li>
+                        <a href="#">Demos</a>
+                        <ul>
+                          <li><a href="index.html">GoHopper</a></li>
+                          <li>
+                            <a href="mexican-restaurant.html"
+                              >Mexican Restaurant</a
+                            >
+                          </li>
+                          <li><a href="foodstop.html">Food Stop</a></li>
+                          <li><a href="rtl.html">Rtl Demo</a></li>
+                          <li><a href="food-cout.html">Food Court</a></li>
+                          <li>
+                            <a href="single-restaurant.html"
+                              >Single Restaurant Demo</a
+                            >
+                          </li>
+                        </ul>
+                        <!--End Sub Menu -->
+                      </li>
+                      <li><a href="listings.html">Restaurants</a></li>
+                      <li>
+                        <a href="#">Pages</a>
+                        <ul>
+                          <li><a href="price-plans.html">Price Plans</a></li>
+                          <li><a href="how-it-works.html">How it works</a></li>
+                          <li><a href="faq.html">FAQ’s</a></li>
+                          <li><a href="404.html">404</a></li>
+                          <li>
+                            <a href="search-result.html">Search Result</a>
+                          </li>
+                          <li><a href="contact-us.html">Contact</a></li>
+                        </ul>
+                        <!--End Sub Menu -->
+                      </li>
+                      <li>
+                        <a href="#">Blogs</a>
+                        <ul>
+                          <li><a href="blog-large.html">Blog Large</a></li>
+                          <li><a href="blog-medium.html">Blog Medium</a></li>
+                          <li><a href="blog-masonry.html">Blog Masonry</a></li>
+                          <li>
+                            <a href="blog-detail.html">Blog Detail Page</a>
+                          </li>
+                        </ul>
+                        <!--End Sub Menu -->
+                      </li>
+                    </ul>
+                  </nav>
+                  <!-- .main-navigation -->
+                </div>
+
+                <div class="main-location">
+                  <ul>
+                    <li class="location-has-children choose-location">
+                      <form action="#">
+                        <input
+                          type="text"
+                          value=""
+                          name="location"
+                          placeholder="Enter your delivery location"
+                          autocomplete="off"
+                        />
+                        <span
+                          id="foodbakery_radius_location_open"
+                          class="foodbakery-radius-location"
+                          ><i class="icon-target5"></i
+                        ></span>
+                      </form>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="login-option">
+                  <a
+                    class="cs-color cs-popup-joinus-btn login-popup"
+                    data-target="#sign-in"
+                    data-toggle="modal"
+                    href="#user-register"
+                    >Login / Register</a
+                  ><a class="get-start-btn" href="register-restaurant.html">
+                    Register Restaurant
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Header End -->
+      <!-- Main Section Start -->
+      <div class="main-section">
+        <!-- Home Pages Elements Strat -->
+        <!-- Main Search Start -->
+        <div
+          class="page-section nopadding cs-nomargin"
+          style="
+            padding-top: 200px;
+            padding-bottom: 150px;
+            margin-bottom: 0px;
+            background: url(assets/extra-images/bg-image1.jpg) no-repeat center /
+              cover;
+          "
+        >
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="element-title">
+                  <h1
+                    style="
+                      font-size: 40px;
+                      color: #505050;
+                      text-transform: uppercase;
+                      line-height: 50px;
+                      margin-bottom: 25px;
+                      text-align: center;
+                    "
+                  >
+                    We are in the business of food<br />our restaurants do
+                  </h1>
+                  <p
+                    style="
+                      font-size: 18px;
+                      letter-spacing: 1px;
+                      color: #505050;
+                      text-align: center;
+                    "
+                  >
+                    Ridiculus sociosqu cursus neque cursus curae ante
+                    scelerisque vehicula.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="main-search fancy bg-holder">
+                  <form>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-5 col-xs-12">
+                        <div class="field-holder">
+                          <input type="text" placeholder="Resturant name" />
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+                        <div class="field-holder">
+                          <ul>
+                            <li class="select-location">
+                              <div
+                                class="foodbakery-locations-fields-group foodbakery-focus-out"
+                              >
+                                <span class="foodbakery-search-location-icon"
+                                  ><i class="icon-location"></i
+                                ></span>
+                                <span
+                                  id="foodbakery_radius_location_open333"
+                                  class="foodbakery-radius-location"
+                                  ><i class="icon-target5"></i
+                                ></span>
+                                <input
+                                  type="text"
+                                  class="location-field-text filter"
+                                  placeholder="All Locations"
+                                />
+                              </div>
+                              <div
+                                class="select-location"
+                                id="foodbakery-radius-range333"
+                                style="display: none"
+                              >
+                                <div class="select-popup popup-open">
+                                  <a
+                                    id="location_close_popup333"
+                                    href="javascript:0;"
+                                    class="location-close-popup"
+                                  >
+                                    <i class="icon-times"></i
+                                  ></a>
+                                  <input
+                                    type="hidden"
+                                    class="foodbakery-radius"
+                                    name="foodbakery_radius"
+                                    value="10"
+                                  />
+                                  <p>Show with in</p>
+                                  <input
+                                    id="ex16b333"
+                                    type="text"
+                                    data-value="10"
+                                    value="10"
+                                    style="display: none"
+                                  />
+                                  <script>
+                                    jQuery(document).ready(function () {
+                                      var elem = jQuery("#ex16b333");
+                                      if (elem.length != "") {
+                                        elem.slider({
+                                          step: 1,
+                                          min: 0,
+                                          max: 500,
+                                          value: 10,
+                                        });
+                                        elem.on("slideStop", function () {
+                                          var rang_slider_val = elem.val();
+                                          jQuery(
+                                            "#ex16b333CurrentSliderValLabel"
+                                          ).html(rang_slider_val);
+                                          jQuery(
+                                            "#range-hidden-foodbakery-radius333"
+                                          ).val(rang_slider_val);
+                                          //foodbakery_restaurant_content("333");
+                                        });
+                                        elem.on("slide", function () {
+                                          jQuery(
+                                            "#ex16b333CurrentSliderValLabel"
+                                          ).html(elem.val());
+                                        });
+                                      }
+
+                                      $(
+                                        "#foodbakery_radius_location_open333"
+                                      ).click(function () {
+                                        $("#foodbakery-radius-range333").show();
+                                      });
+                                      $("#location_close_popup333").click(
+                                        function () {
+                                          $(
+                                            "#foodbakery-radius-range333"
+                                          ).hide();
+                                        }
+                                      );
+                                    });
+                                  </script>
+                                  <span
+                                    >Miles:
+                                    <span id="ex16b333CurrentSliderValLabel"
+                                      >10</span
+                                    ></span
+                                  ><br />
+                                  <p class="my-location">
+                                    of
+                                    <i class="cs-color icon-location-arrow"></i
+                                    ><a
+                                      id="foodbakery-geo-location-all"
+                                      class="cs-color foodbakery-geo-location313324"
+                                      href="javascript:void(0)"
+                                      >My location</a
+                                    >
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <div class="field-holder">
+                          <input type="submit" value="Search" />
+                        </div>
+                      </div>
+                    </div>
                   </form>
-                  <a class="logo" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}"></a></a>
-                  <span class="toggle" onclick="openNav()"><i class="fa fa-bars"></i></span>
-                  <div class="login_text"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left10">Email : Demo@gmail.com</span></a></div>
-               </nav>
+                </div>
+              </div>
             </div>
-         </div>
-      </div>
-      <!-- header section end -->
-      <!-- layout main section start -->
-      <div class="container-fluid">
-         <div class="layout_main">
-            <!-- banner section start -->
-            <div class="banner_section">
-               <div class="container">
-                  <div class="menu_main">
-                     <div class="custome_menu">
-                        <ul>
-                           <li class="active"><a href="{% url 'home' %}">Home</a></li>
-                           <li><a href="service.html">Services</a></li>
-                           <li><a href="about.html">About</a></li>
-                           <li><a href="blog.html">Blog</a></li>
-                           <li><a href="shop.html">Shop</a></li>
-                           <li><a href="contact.html">Contacts</a></li>
-                        </ul>
-                     </div>
-                     <div class="login_menu">
-                        <ul>
-                           <li><a href="#">Login</a></li>
-                           <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-               <div id="main_slider" class="carousel slide" data-ride="carousel">
-                  <div class="carousel-inner">
-                     <div class="carousel-item active">
-                        <div class="container">
-                           <div class="row">
-                              <div class="col-md-12">
-                                 <h1 class="banner_taital">Find The Best Restaurants Cafes And Bars in </h1>
-                                 <h1 class="banner_text">YOUR CITY</h1>
-                                 <div class="banner_main">
-                                    <div class="dropdown">
-                                       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Category 
-                                       </button>
-                                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                          <a class="dropdown-item" href="#">Action</a>
-                                          <a class="dropdown-item" href="#">Another action</a>
-                                          <a class="dropdown-item" href="#">Something else here</a>
-                                       </div>
-                                    </div>
-                                    <div class="main">
-                                       <!-- Another variation with a button -->
-                                       <div class="input-group">
-                                          <input type="text" class="form-control" placeholder="Search">
-                                          <div class="input-group-append">
-                                             <button class="btn btn-secondary" type="button" style="background-color: #ffffff; border-color:#ffffff ">
-                                             <i class="fa fa-search" style="color: #191919;"></i>
-                                             </button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="ordernow_bt"><a href="#">Order Now</a></div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item">
-                        <div class="container">
-                           <div class="row">
-                              <div class="col-md-12">
-                                 <h1 class="banner_taital">Find The Best Restaurants Cafes And Bars in </h1>
-                                 <h1 class="banner_text">YOUR CITY</h1>
-                                 <div class="banner_main">
-                                    <div class="dropdown">
-                                       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Category 
-                                       </button>
-                                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                          <a class="dropdown-item" href="#">Action</a>
-                                          <a class="dropdown-item" href="#">Another action</a>
-                                          <a class="dropdown-item" href="#">Something else here</a>
-                                       </div>
-                                    </div>
-                                    <div class="main">
-                                       <!-- Another variation with a button -->
-                                       <div class="input-group">
-                                          <input type="text" class="form-control" placeholder="Search this blog">
-                                          <div class="input-group-append">
-                                             <button class="btn btn-secondary" type="button" style="background-color: #ffffff; border-color:#ffffff ">
-                                             <i class="fa fa-search" style="color: #191919;"></i>
-                                             </button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="ordernow_bt"><a href="#">Order Now</a></div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item">
-                        <div class="container">
-                           <div class="row">
-                              <div class="col-md-12">
-                                 <h1 class="banner_taital">Find The Best Restaurants Cafes And Bars in </h1>
-                                 <h1 class="banner_text">YOUR CITY</h1>
-                                 <div class="banner_main">
-                                    <div class="dropdown">
-                                       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Category 
-                                       </button>
-                                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                          <a class="dropdown-item" href="#">Action</a>
-                                          <a class="dropdown-item" href="#">Another action</a>
-                                          <a class="dropdown-item" href="#">Something else here</a>
-                                       </div>
-                                    </div>
-                                    <div class="main">
-                                       <!-- Another variation with a button -->
-                                       <div class="input-group">
-                                          <input type="text" class="form-control" placeholder="Search this blog">
-                                          <div class="input-group-append">
-                                             <button class="btn btn-secondary" type="button" style="background-color: #ffffff; border-color:#ffffff ">
-                                             <i class="fa fa-search" style="color: #191919;"></i>
-                                             </button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="ordernow_bt"><a href="#">Order Now</a></div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-                  <i class="fa fa-angle-left"></i>
-                  </a>
-                  <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-                  <i class="fa fa-angle-right"></i>
-                  </a>
-               </div>
-            </div>
-            <!-- banner section end -->
-            <!-- service section start -->
-            <div class="service_section layout_padding">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-sm-12">
-                        <h1 class="service_taital">Quick Searches</h1>
-                     </div>
-                  </div>
-                  <div class="service_section_2">
-                     <div class="row">
-                        <div class="col">
-                           <div class="service_box">
-                              <div class="breakfast_img"><img src="{% static 'images/breakfast-img.png' %}"></div>
-                           </div>
-                           <h4 class="breakfast_text">Breakfast</h4>
-                           <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                        <div class="col">
-                           <div class="service_box">
-                              <div class="breakfast_img"><img src="{% static 'images/delivery-img.png' %}"></div>
-                           </div>
-                           <h4 class="breakfast_text">Delivery</h4>
-                           <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                        <div class="col">
-                           <div class="service_box">
-                              <div class="breakfast_img"><img src="{% static 'images/dinner-img.png' %}"></div>
-                           </div>
-                           <h4 class="breakfast_text">Dinner</h4>
-                           <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                        <div class="col">
-                           <div class="service_box">
-                              <div class="breakfast_img"><img src="{% static 'images/coffee-img.png' %}"></div>
-                           </div>
-                           <h4 class="breakfast_text">Coffee</h4>
-                           <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                        <div class="col">
-                           <div class="service_box">
-                              <div class="breakfast_img"><img src="{% static 'images/alcohol-img.png' %}"></div>
-                           </div>
-                           <h4 class="breakfast_text">Alcohol</h4>
-                           <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                        <div class="col">
-                           <div class="service_box">
-                              <div class="breakfast_img"><img src="{% static 'images/diningtable-img.png' %}"></div>
-                           </div>
-                           <h4 class="breakfast_text">Dining table</h4>
-                           <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- service section end -->
-            <!-- blog section start -->
-            <div class="blog_section layout_padding">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-sm-12">
-                        <h1 class="blog_taital">Collections Food In city</h1>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="blog_section_2 layout_padding">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-6">
-                        <div class="blog_img"><img src="{% static 'images/blog-img1.png' %}"></div>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="blog_taital_main">
-                           <h1 class="blog_text">This Week going</h1>
-                           <p class="lorem_text">Long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed</p>
-                           <div class="readmore_btn"><a href="#">Read More</a></div>
-                        </div>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="blog_img"><img src="{% static 'images/blog-img2.png' %}"></div>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="blog_taital_main">
-                           <h1 class="blog_text">Just Delivery Food</h1>
-                           <p class="lorem_text">Long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed</p>
-                           <div class="readmore_btn"><a href="#">Read More</a></div>
-                        </div>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="blog_img"><img src="{% static 'images/blog-img3.png' %}"></div>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="blog_taital_main">
-                           <h1 class="blog_text">Newly Opened Cafe</h1>
-                           <p class="lorem_text">Long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed</p>
-                           <div class="readmore_btn"><a href="#">Read More</a></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- blog section end -->
+          </div>
+        </div>
+        <!-- Main Search End -->
 
-            <!-- shop section start -->
-            <!-- <div class="shop_section layout_padding">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-6">
-                        <h1 class="shop_taital">Get the <br><span style="color: #18191a;">Food Finda App</span></h1>
-                        <p class="shop_text">Long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as</p>
-                        <div class="app_icon_main">
-                           <div class="app_icon"><img src="images/icon-1.png"></div>
-                           <div class="app_icon"><img src="images/icon-2.png"></div>
+        <!-- Top Restarurants Section Start -->
+        <div
+          class="page-section nopadding cs-nomargin"
+          style="
+            margin-top: 0px;
+            padding-top: 60px;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            background: #ffffff;
+          "
+        >
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="element-title align-left">
+                  <h2>Top Restaurants</h2>
+                  <p>Explore restaurants, bars, and cafés by locality</p>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="company-logo">
+                  <ul>
+                    <li class="has-border">
+                      <figure>
+                        <a href="#"
+                          ><img
+                            src="{% static 'assets/extra-images/listing-logo18.png' %}"
+                            class="attachment-full size-full wp-post-image"
+                            alt=""
+                        /></a>
+                      </figure>
+                    </li>
+                    <li class="has-border">
+                      <figure>
+                        <a href="#"
+                          ><img
+                            src="{% static 'assets/extra-images/fb-restaurant-02.jpg' %}"
+                            class="attachment-full size-full wp-post-image"
+                            alt=""
+                        /></a>
+                      </figure>
+                    </li>
+                    <li class="has-border">
+                      <figure>
+                        <a href="#"
+                          ><img
+                            src="{% static 'assets/extra-images/fb-restaurant-04.jpg' %}"
+                            class="attachment-full size-full wp-post-image"
+                            alt=""
+                        /></a>
+                      </figure>
+                    </li>
+                    <li class="has-border">
+                      <figure>
+                        <a href="#"
+                          ><img
+                            src="{% static 'assets/extra-images/fb-restaurant-06.jpg' %}"
+                            class="attachment-full size-full wp-post-image"
+                            alt=""
+                        /></a>
+                      </figure>
+                    </li>
+                    <li class="has-border">
+                      <figure>
+                        <a href="#"
+                          ><img
+                            src="{% static 'assets/extra-images/xlisting-logo03.png.pagespeed.ic_.aT-o9LinEJ.png' %}"
+                            class="attachment-full size-full wp-post-image"
+                            alt=""
+                        /></a>
+                      </figure>
+                    </li>
+                    <li class="has-border">
+                      <figure>
+                        <a href="#"
+                          ><img
+                            src="{% static 'assets/extra-images/listing-logo09.png' %}"
+                            class="attachment-full size-full wp-post-image"
+                            alt=""
+                        /></a>
+                      </figure>
+                    </li>
+                    <li class="has-border">
+                      <figure>
+                        <a href="#"
+                          ><img
+                            src="{% static 'assets/extra-images/listing-logo18.png' %}"
+                            class="attachment-full size-full wp-post-image"
+                            alt=""
+                        /></a>
+                      </figure>
+                    </li>
+                    <li class="has-border">
+                      <figure>
+                        <a href="#"
+                          ><img
+                            src="{% static 'assets/extra-images/fb-restaurant-09.png' %}"
+                            class="attachment-full size-full wp-post-image"
+                            alt=""
+                        /></a>
+                      </figure>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Top Restarurants Section End -->
+        <!-- Choose From Most Popular Listin Start -->
+        <div
+          class="page-section nopadding cs-nomargin"
+          style="
+            margin-top: 0px;
+            padding-top: 60px;
+            padding-bottom: 50px;
+            margin-bottom: 0px;
+            background: #ffffff;
+          "
+        >
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="element-title align-center">
+                  <h2>Choose From Most Popular Restaurants</h2>
+                  <p>
+                    Cum doctus civibus efficiantur in imperdiet deterruisset.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="listing fancy">
+                  <ul class="row">
+                    <li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                      <div class="list-post featured">
+                        <div class="img-holder">
+                          <figure>
+                            <a href="#"
+                              ><img
+                                src="assets/extra-images/listing-logo18.png"
+                                class="img-thumb wp-post-image"
+                                alt=""
+                            /></a>
+                          </figure>
+                          <span class="restaurant-status close">
+                            <em class="bookmarkRibbon"></em>Close
+                          </span>
                         </div>
-                        <div class="download_bt"><a href="#">Download Now</a></div>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="mobile_img"><img src="images/mobile-img.png"></div>
-                     </div>
-                  </div>
-               </div>
-            </div> -->
-            <!-- shop section end -->
+                        <div class="text-holder">
+                          <div class="list-rating">
+                            <div class="rating-star">
+                              <span
+                                class="rating-box"
+                                style="width: 100%"
+                              ></span>
+                            </div>
+                            <span class="reviews">(1)</span>
+                          </div>
+                          <div class="post-title">
+                            <h5>
+                              <a href="listing-detail.html">Restaurant Demo</a>
+                              <span class="sponsored text-color"
+                                >Sponsored</span
+                              >
+                            </h5>
+                          </div>
+                          <address>
+                            <span>Type of food : </span> Apple Juice
+                          </address>
+                        </div>
+                      </div>
+                    </li>
 
-            <!-- testimonial section start -->
-            <div class="testimonial_section layout_padding">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-sm-12">
-                        <h1 class="testimonial_taital">Customers Says</h1>
-                     </div>
-                  </div>
-                  <div id="my_slider" class="carousel slide" data-ride="carousel">
-                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                           <div class="testimonial_section_2">
-                              <div class="row">
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Loliy Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Den Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Jonshon Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                              </div>
-                           </div>
+                    <li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                      <div class="list-post featured">
+                        <div class="img-holder">
+                          <figure>
+                            <a href="#"
+                              ><img
+                                src="assets/extra-images/listing-logo09.png"
+                                class="img-thumb wp-post-image"
+                                alt=""
+                            /></a>
+                          </figure>
+                          <span class="restaurant-status open">
+                            <em class="bookmarkRibbon"></em>open
+                          </span>
                         </div>
-                        <div class="carousel-item">
-                           <div class="testimonial_section_2">
-                              <div class="row">
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Loliy Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Den Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Jonshon Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                              </div>
-                           </div>
+                        <div class="text-holder">
+                          <div class="list-rating">
+                            <div class="rating-star">
+                              <span
+                                class="rating-box"
+                                style="width: 100%"
+                              ></span>
+                            </div>
+                            <span class="reviews">(1)</span>
+                          </div>
+                          <div class="post-title">
+                            <h5>
+                              <a href="listing-detail.html"
+                                >Classic Restaurant</a
+                              >
+                              <span class="sponsored text-color"
+                                >Sponsored</span
+                              >
+                            </h5>
+                          </div>
+                          <address>
+                            <span>Type of food : </span> Chicken Roast, Chines
+                            Soup, Cold Coffee, Cold Drink, Hot Dogs
+                          </address>
                         </div>
-                        <div class="carousel-item">
-                           <div class="testimonial_section_2">
-                              <div class="row">
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Loliy Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Den Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Jonshon Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
-                     <i class="fa fa-arrow-left"></i>
-                     </a>
-                     <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
-                     <i class="fa fa-arrow-right"></i>
-                     </a>
-                  </div>
-               </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <!-- testimonial section end -->
-            <!-- contact section start -->
-            <div class="contact_section layout_padding">
-               <div class="container">
-                  <div class="contact_section_2">
-                     <div class="row">
-                        <div class="col-md-12">
-                           <h1 class="contact_taital">Get In Touch</h1>
-                           <form action="">
-                              <div class="mail_section_1">
-                                 <input type="text" class="mail_text" placeholder="Name" name="Name">
-                                 <input type="text" class="mail_text" placeholder="Phone Number" name="Phone Number"> 
-                                 <input type="text" class="mail_text" placeholder="Email" name="Email">
-                                 <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
-                                 <div class="send_bt"><a href="#">SEND</a></div>
-                              </div>
-                           </form>
-                        </div>
-                     </div>
-                     <!-- order section start -->
-                     <div class="order_section">
-                        <div class="order_taital_main">
-                           <h1 class="order_taital">Order Best food at time</h1>
-                           <div class="order_bt"><a href="#">Order Now</a></div>
-                        </div>
-                     </div>
-                     <!-- order section end -->
-                  </div>
-               </div>
-            </div>
-            <!-- contact section end -->
-            <!-- footer section start -->
-            <div class="footer_section">
-               <div class="container">
-                  <div class="footer_sectio_2">
-                     <div class="row">
-                        <div class="col-lg-3 col-md-6">
-                           <h2 class="footer_logo">GoHopper</h2>
-                           <p class="footer_text">t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of </p>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                           <h2 class="useful_text">Navigation</h2>
-                           <div class="footer_menu">
-                              <ul>
-                                 <li class="active"><a href="index.html">Home</a></li>
-                                 <li><a href="about.html">About</a></li>
-                                 <li><a href="location.html">Location</a></li>
-                                 <li><a href="service.html">Services</a></li>
-                                 <li><a href="features.html">Features</a></li>
-                              </ul>
-                           </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                           <h2 class="useful_text">Contact Info</h2>
-                           <p class="address_text">Office Address</p>
-                           <div class="map_icon"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left15">Loram ipusm New York, NY 36524</span></a></div>
-                           <p class="address_text">Customer Service:</p>
-                           <div class="map_icon"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left15">( +01 1234567890 )</span></a></div>
-                           <div class="map_icon"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left15">demo@gmail.com</span></a></div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                           <h2 class="useful_text">Discover</h2>
-                           <div class="subscribe_menu">
-                              <ul>
-                                 <li><a href="#">Help</a></li>
-                                 <li><a href="#">How It Works</a></li>
-                                 <li><a href="#">subscribe</a></li>
-                                 <li><a href="contact.html">Contact Us</a></li>
-                              </ul>
-                           </div>
-                           <div class="social_icon">
-                              <ul>
-                                 <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                 <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                 <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                 <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- footer section end -->
-         </div>
+          </div>
+        </div>
+        <!-- Choose From Most Popular Listing End -->
+
+        <!-- Home Pages Elements End  -->
       </div>
-      <!-- layout main section end -->
-      <!-- copyright section start -->
-      <div class="copyright_section">
-         <div class="container">
-            <p class="copyright_text">2023 All Rights Reserved. Design by <a href="https://github.com/ERoydev">Emil Roydev</a></p>
-         </div>
-      </div>
-      <!-- copyright section end -->
-      <!-- Javascript files-->
-      <script src="{% static 'js/jquery.min.js' %}"></script>
-      <script src="{% static 'js/popper.min.js' %}"></script>
-      <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-      <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
-      <script src="{% static 'js/plugin.js' %}"></script>
-      <!-- sidebar -->
-      <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
-      <script src="js/custom.js"></script>
-      <!-- javascript --> 
-      <script src="js/custom.js"></script>
-      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>  
-      <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-      <script>
-         function openNav() {
-           document.getElementById("mySidenav").style.width = "100%";
-         }
-         
-         function closeNav() {
-           document.getElementById("mySidenav").style.width = "0";
-         }
-      </script> 
-   </body>
+      <!-- Main Section End -->
+      <!-- Footer Start -->
+      <footer id="footer" class="footer-style-2">
+        <div class="footer-widget">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="widget widget-newsletter">
+                  <div class="widget-title">
+                    <h5>Subscribe to our Newsletter</h5>
+                  </div>
+                  <div class="fieldset">
+                    <form action="#">
+                      <div class="field-holder">
+                        <label>
+                          <i class="icon-envelope3"></i>
+                          <input
+                            type="text"
+                            class="field-input"
+                            placeholder=" Enter Your Email Address..."
+                          />
+                        </label>
+                      </div>
+                      <div class="field-holder btn-holder">
+                        <input
+                          class="subscribe-btn bgcolor"
+                          type="submit"
+                          value="Sign Up"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright-sec">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="copyright-inner">
+                  <div class="copy-right">
+                    <p>
+                      © 2020 Foodbakery. All Rights Reserved. Developed By
+                      <a href="#">Rathan Kumar</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.cs-copyright -->
+      </footer>
+      <!-- Footer End -->
+    </div>
+
+    <!-- Modal Popup End -->
+    <script src="{% static 'assets/js/scripts.js' %}"></script>
+    <script src="{% static 'assets/js/functions.js' %}"></script>
+  </body>
 </html>
