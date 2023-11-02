@@ -1,15 +1,16 @@
 from django.shortcuts import render, redirect
 from .forms import UserForm
 from .models import User, UserProfile
-from django.contrib import messages
+from django.contrib import messages, auth
 from vendor.form import VendorForm
+
 # Create your views here.
 
 
 def registerUser(request):
   form = None
 
-  if request.method == 'POST':
+  if request.method == 'POST': # I need to get the request data and create user
     form = UserForm(request.POST)
 
     if form.is_valid():
@@ -46,7 +47,7 @@ def registerUser(request):
 
 def registerVendor(request):
 
-  if request.method == "POST":
+  if request.method == "POST":  # Get data and create vendor registration
     form = UserForm(request.POST)
     v_form = VendorForm(request.POST, request.FILES)
 
@@ -81,3 +82,28 @@ def registerVendor(request):
   }
 
   return render(request, 'accounts/registerVendor.html', context)
+
+def login(request):
+
+  if request.method == "POST": # User want to log in 
+    email = request.POST['email']#-> this is the name in the input field name='email' and i access it here without name in input field i cannot access here like that
+    password = request.POST['password']
+
+    user = auth.authenticate(email=email, password=password)
+
+    if user is not None: # If user has right credentials he will not be None
+      auth.login(request, user)
+      messages.success(request, "You are now logged in.")
+      return redirect('dashboard')
+
+    else:
+      messages.error(request, 'Invalid login credentials')
+      return redirect('login')
+
+  return render(request, 'accounts/login.html')
+
+def logout(request):
+  pass
+
+def dashboard(request):
+  return render(request, 'accounts/dashboard.html')

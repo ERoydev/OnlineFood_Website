@@ -19,7 +19,6 @@
                 </a>
               </figure>
             </div>
-            
 
             <div class="main-location ml-5">
               <ul>
@@ -48,8 +47,16 @@
                 class="cs-color cs-popup-joinus-btn login-popup"
                 data-target="#sign-in"
                 data-toggle="modal"
-                href="#"
-                >Login </a>  <span><a href="{% url 'registerUser' %}" class="cs-color cs-popup-joinus-btn login-popup">Register</a></span>
+                href="{% url 'login' %}"
+                >Login
+              </a>
+              <span
+                ><a
+                  href="{% url 'registerUser' %}"
+                  class="cs-color cs-popup-joinus-btn login-popup"
+                  >Register</a
+                ></span
+              >
               <a class="get-start-btn" href="{% url 'registerVendor' %}">
                 Register Restaurant
               </a>
