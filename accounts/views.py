@@ -3,14 +3,35 @@ from .forms import UserForm
 from .models import User, UserProfile
 from django.contrib import messages, auth
 from vendor.form import VendorForm
+from .utils import detectUser
+from django.contrib.auth.decorators import login_required, user_passes_test
 
+from django.core.exceptions import PermissionDenied
 # Create your views here.
+
+# Restrict the vendor from accessing the customer page
+def check_role_vendor(user):
+  if user.role == 1:
+    return True
+
+  else:
+      raise PermissionDenied
+
+# Restrict the user from accessing the vendor page
+def check_role_customer(user):
+  if user.role == 2:
+    return True
+
+  else:
+      raise PermissionDenied
 
 
 def registerUser(request):
-  form = None
+  if request.user.is_authenticated:
+    messages.warning(request, 'You are already logged in!')
+    return redirect('custDashboard')
 
-  if request.method == 'POST': # I need to get the request data and create user
+  elif request.method == 'POST': # I need to get the request data and create user
     form = UserForm(request.POST)
 
     if form.is_valid():
@@ -47,7 +68,11 @@ def registerUser(request):
 
 def registerVendor(request):
 
-  if request.method == "POST":  # Get data and create vendor registration
+  if request.user.is_authenticated:
+    messages.warning(request, 'You are already logged in!')
+    return redirect('vendorDashboard')
+
+  elif request.method == "POST":  # Get data and create vendor registration
     form = UserForm(request.POST)
     v_form = VendorForm(request.POST, request.FILES)
 
@@ -85,16 +110,20 @@ def registerVendor(request):
 
 def login(request):
 
-  if request.method == "POST": # User want to log in 
+  if request.user.is_authenticated:
+    messages.warning(request, 'You are already logged in!')
+    return redirect('myAccount')
+
+  elif request.method == "POST": # User want to log in 
     email = request.POST['email']#-> this is the name in the input field name='email' and i access it here without name in input field i cannot access here like that
     password = request.POST['password']
 
     user = auth.authenticate(email=email, password=password)
 
-    if user is not None: # If user has right credentials he will not be None
+    if user is not None: # If user has right credentials he will not be None and he will enter his account
       auth.login(request, user)
       messages.success(request, "You are now logged in.")
-      return redirect('dashboard')
+      return redirect('myAccount')
 
     else:
       messages.error(request, 'Invalid login credentials')
@@ -103,7 +132,32 @@ def login(request):
   return render(request, 'accounts/login.html')
 
 def logout(request):
-  pass
+  if not request.user.is_authenticated:
+    messages.warning(request, "You are not logged-in to logout!")
+    return redirect('login')
 
-def dashboard(request):
-  return render(request, 'accounts/dashboard.html')
+  auth.logout(request)
+  messages.info(request, "You are logged out")
+  return redirect('login')
+
+@login_required(login_url='login')
+# Because i need to access myAccount only if i am logged in
+def myAccount(request):
+  '''
+  I have function to detect user in utils.py that give me the dashboard according the user role
+  '''
+  user = request.user
+  redirectUrl = detectUser(user)
+  return redirect(redirectUrl)
+
+
+@login_required(login_url='login')
+@user_passes_test(check_role_customer)
+def custDashboard(request):
+  return render(request, 'accounts/custDashboard.html')
+
+
+@login_required(login_url='login')
+@user_passes_test(check_role_vendor)
+def vendorDashboard(request):
+  return render(request, 'accounts/vendorDashboard.html')
