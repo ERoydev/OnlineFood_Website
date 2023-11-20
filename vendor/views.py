@@ -1,17 +1,36 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .forms import VendorForm
 from accounts.forms import UserProfileForm
 from accounts.models import UserProfile
 from .models import Vendor
-# Create your views here.
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required, user_passes_test
+from accounts.views import check_role_vendor
 
+
+
+@login_required(login_url='login')
+@user_passes_test(check_role_vendor)
 def vprofile(request):
   profile = get_object_or_404(UserProfile, user=request.user)
   vendor = get_object_or_404(Vendor, user=request.user)
 
-  profile_form = UserProfileForm(instance = profile) # TO LOAD DYNAMICALY IN MY FORMS THE DATA THAT IS ALREADY INSIDE THIS INSTANCE
-  vendor_form = VendorForm(instance = vendor)
+  profile_form = UserProfileForm(instance=profile) # TO LOAD DYNAMICALY IN MY FORMS THE DATA THAT IS ALREADY INSIDE THIS INSTANCE
+  vendor_form = VendorForm(instance=vendor)
 
+  if request.method == "POST":
+    profile_form = UserProfileForm(request.POST, request.FILES, instance=profile)
+    vendor_form = VendorForm(request.POST, request.FILES, instance=vendor)
+
+    if profile_form.is_valid() and vendor_form.is_valid():
+      profile_form.save()
+      vendor_form.save()
+      messages.success(request, "Settings updated")
+      return redirect('vprofile')
+
+    else:
+      print(profile_form.errors)
+      print(vendor_form.errors)
 
   context = {
     'profile_form': profile_form,
